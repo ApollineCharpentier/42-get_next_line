@@ -70,19 +70,18 @@ int	is_line(char **store, char **line)
 int		get_next_line(int fd, char **line)
 {
 	int			bytes_read;
-	char		buffer[1000000 + 1];
+	char		buffer[50 + 1];
 	static char	*store;
 
 	int BUFFER_SIZE;
-	BUFFER_SIZE = 1000000;
+	BUFFER_SIZE = 50;
 	
 	if (!line || fd < 0 || BUFFER_SIZE < 1)
 		return (-1);
 	if (store && is_line(&store, line))
 		return (1);
 	while ((bytes_read = read(fd, buffer, BUFFER_SIZE)) > 0)
-	{
-		buffer[bytes_read] = '\0';
+	{		buffer[bytes_read] = '\0';
 		if (!(store = ft_strjointwo(store, buffer)))
 			return (-1);
 		if (is_line(&store, line))

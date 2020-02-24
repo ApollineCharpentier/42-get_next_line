@@ -6,7 +6,7 @@
 /*   By: apcharpe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 17:26:44 by apcharpe          #+#    #+#             */
-/*   Updated: 2020/02/20 16:29:55 by apcharpe         ###   ########.fr       */
+/*   Updated: 2020/02/24 10:20:36 by apcharpe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ size_t	ft_strlen(const char *str)
 }
 
 // returns pointer to string after the after and including the character c
+/*
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
@@ -39,8 +40,17 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (0);
 }
+*/
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s && *s != (char)c)
+		s++;
+	if (*s == (char)c)
+		return((char *)s);
+	return (NULL);
+}
 
-// returns pointer to string starting at the position 'start'
+// returns pointer to string starting at the position 'start', max de longueur len
 char	*ft_substr(const char*s, unsigned int start, size_t len)
 {
 	size_t	i;
@@ -102,19 +112,4 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	dst[i] = '\0';
 	return (size_src);
-}
-
-int	main(void)
-{
-	printf("strlen : %zu\n", ft_strlen("hello goodbye"));
-	printf("strchr : %s\n", ft_strchr("hello goodbye", 'g'));
-	printf("substr : %s\n", ft_substr("hello goodbye", 3, 7));
-	printf("strdup : %s\n", ft_strdup("hello goodbye"));
-
-	char dst[5] = "hello";
-	size_t	strlcpy;
-
-	strlcpy = ft_strlcpy(dst, "hello goodbye", 5);
-	printf("strlcpy (length of dest) : %zu\n", strlcpy);
-	printf("strlcpy (dest) : %s\n", dst);
 }
