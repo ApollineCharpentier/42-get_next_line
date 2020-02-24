@@ -29,7 +29,6 @@ char	*ft_strjointwo(char *store, char *buffer)
 	size_t	len_store;
 	size_t	len_buff;
 	size_t	len;
-
 	len_store = 0;
 	len_buff = ft_strlen(buffer);
 	if (store)
