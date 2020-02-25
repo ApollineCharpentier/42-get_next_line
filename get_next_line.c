@@ -6,7 +6,7 @@
 /*   By: apcharpe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 14:18:31 by apcharpe          #+#    #+#             */
-/*   Updated: 2020/02/24 20:47:09 by apcharpe         ###   ########.fr       */
+/*   Updated: 2020/02/25 16:00:49 by apcharpe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,11 @@ int	is_line(char **store, char **line)
 int		get_next_line(int fd, char **line)
 {
 	int			bytes_read;
-	char		buffer[50 + 1];
+	char		buffer[3 + 1];
 	static char	*store;
 
 	int BUFFER_SIZE;
-	BUFFER_SIZE = 50;
+	BUFFER_SIZE = 3;
 	
 	if (!line || fd < 0 || BUFFER_SIZE < 1)
 		return (-1);
@@ -91,5 +91,5 @@ int		get_next_line(int fd, char **line)
 	else if (bytes_read == -1 || bytes_read == 0)
 		*line = ft_strdup("");
 	ft_free(&store);
- 	return (bytes_read);
+	return (bytes_read);
 }
