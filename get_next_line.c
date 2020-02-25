@@ -84,7 +84,7 @@ int		get_next_line(int fd, char **line)
 		if (!(store = ft_strjointwo(store, buffer)))
 			return (-1);
 		if (is_line(&store, line))
-			return (1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       			return (1);
 	}
 	if	(store && *store)
 		*line = ft_strdup(store);
