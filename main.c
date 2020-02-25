@@ -6,7 +6,7 @@
 /*   By: apcharpe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 15:42:48 by apcharpe          #+#    #+#             */
-/*   Updated: 2020/02/24 17:41:28 by apcharpe         ###   ########.fr       */
+/*   Updated: 2020/02/25 12:45:01 by apcharpe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	main(int ac, char **av)
 
 	ac = ac + 0;
 	fd = open("toto.txt", O_RDONLY);
-	printf("%d\n", fd);
 	while ((i = get_next_line(fd, &line)) > 0)
 	{
 		printf("[%d] | %s\n", i, line);
