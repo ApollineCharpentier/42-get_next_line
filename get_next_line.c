@@ -91,5 +91,5 @@ int		get_next_line(int fd, char **line)
 	else if (bytes_read == -1 || bytes_read == 0)
 		*line = ft_strdup("");
 	ft_free(&store);
-	return (bytes_read);
+ 	return (bytes_read);
 }
