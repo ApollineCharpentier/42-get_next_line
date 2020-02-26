@@ -6,16 +6,16 @@
 /*   By: apcharpe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:09:10 by apcharpe          #+#    #+#             */
-/*   Updated: 2020/02/26 11:08:08 by apcharpe         ###   ########.fr       */
+/*   Updated: 2020/02/26 12:22:06 by apcharpe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 32
-#endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
 
 # include <stdlib.h>
 # include <unistd.h>

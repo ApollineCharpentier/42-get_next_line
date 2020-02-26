@@ -6,13 +6,16 @@
 /*   By: apcharpe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 17:26:44 by apcharpe          #+#    #+#             */
-/*   Updated: 2020/02/26 11:26:35 by apcharpe         ###   ########.fr       */
+/*   Updated: 2020/02/26 12:51:41 by apcharpe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-// returns length of string
+/*
+** returns length of string
+*/
+
 size_t	ft_strlen(const char *str)
 {
 	size_t i;
@@ -23,35 +26,26 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-// returns pointer to string after the after and including the character c
 /*
-char	*ft_strchr(const char *s, int c)
-{
-	int	i;
-	char *tmp;
-
-	i = 0;
-	tmp = (char*)s;
-	while (tmp[i] || (tmp[i] == '\0' && (char)c == '\0'))
-	{
-		if (tmp[i] == (char)c)
-			return ((char*)&tmp[i]);
-		i++;
-	}
-	return (0);
-}
+** returns pointer to the string s
+** after and including the first character c found
 */
+
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s && *s != (char)c)
 		s++;
 	if (*s == (char)c)
-		return((char *)s);
+		return ((char *)s);
 	return (NULL);
 }
 
-// returns pointer to string starting at the position 'start', max de longueur len
-char	*ft_substr(const char*s, unsigned int start, size_t len)
+/*
+** returns pointer to the string starting at the position 'start'
+** at max with a length of len
+*/
+
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char	*str;
@@ -69,12 +63,14 @@ char	*ft_substr(const char*s, unsigned int start, size_t len)
 	return (str);
 }
 
+/*
+** copies the string s into a new string str and returns this new string
+*/
 
-// copies string s into a new string str and returns this new string
 char	*ft_strdup(const char *s)
 {
-	int i;
-	char	 *str;
+	int		i;
+	char	*str;
 
 	i = 0;
 	while (s[i])
@@ -91,7 +87,12 @@ char	*ft_strdup(const char *s)
 	return (str);
 }
 
-// copies the source into the destination and returns the size of the source, but at max dstsize 
+/*
+** copies the source (src) into the destination (dst)
+** and returns the size of the source,
+** but at max the size of the destination (dstsize)
+*/
+
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
