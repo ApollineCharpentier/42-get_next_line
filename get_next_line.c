@@ -6,7 +6,7 @@
 /*   By: apcharpe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 14:18:31 by apcharpe          #+#    #+#             */
-/*   Updated: 2020/02/26 10:57:26 by apcharpe         ###   ########.fr       */
+/*   Updated: 2020/02/26 11:53:39 by apcharpe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,9 @@ int		get_next_line(int fd, char **line)
 		if (is_line(&store, line))
             return (1);	
 	}
-//	if	(store && *store)
-//		*line = ft_strdup(store);
-	if (bytes_read == -1 || bytes_read == 0)
+	if	(store && *store)
+		*line = ft_strdup(store);
+	else if (bytes_read == -1 || bytes_read == 0)
 		*line = ft_strdup("");
 	ft_free(&store);
 	return (bytes_read);
