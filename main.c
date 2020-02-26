@@ -6,7 +6,7 @@
 /*   By: apcharpe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 15:42:48 by apcharpe          #+#    #+#             */
-/*   Updated: 2020/02/25 16:01:37 by apcharpe         ###   ########.fr       */
+/*   Updated: 2020/02/26 10:37:01 by apcharpe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,17 @@ int	main(void)
 	int		i;
 
 //	ac = ac + 0;
-	fd = open("toto2.txt", O_RDONLY);
+	fd = open("toto3.txt", O_RDONLY);
 	while ((i = get_next_line(fd, &line)) > 0)
 	{
 		printf("[%d] | %s\n", i, line);
 		free (line);
 		i++;
 	}
-		get_next_line(fd, &line);
-		printf("[%d] | %s\n", i, line);
+//		get_next_line(fd, &line);
+//		printf("[%d] | %s\n", i, line);
+//		free (line);
 		close (fd);
-
+//		system("leaks a.out");
 		return (0);
 }

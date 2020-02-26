@@ -6,7 +6,7 @@
 /*   By: apcharpe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 14:18:31 by apcharpe          #+#    #+#             */
-/*   Updated: 2020/02/25 17:36:30 by apcharpe         ###   ########.fr       */
+/*   Updated: 2020/02/26 10:34:56 by apcharpe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,9 @@ int	is_line(char **store, char **line)
 int		get_next_line(int fd, char **line)
 {
 	int			bytes_read;
-	char		buffer[4 + 1];
+	char		buffer[BUFFER_SIZE + 1];
 	static char	*store;
 
-	int BUFFER_SIZE;
-	BUFFER_SIZE = 4;
-	
 	if (!line || fd < 0 || BUFFER_SIZE < 1)
 		return (-1);
 	if (store && is_line(&store, line))
@@ -84,7 +81,7 @@ int		get_next_line(int fd, char **line)
 		if (!(store = ft_strjointwo(store, buffer)))
 			return (-1);
 		if (is_line(&store, line))
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       			return (1);
+            return (1);	
 	}
 	if	(store && *store)
 		*line = ft_strdup(store);
